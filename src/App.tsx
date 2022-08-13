@@ -13,7 +13,7 @@ export const App = () => {
   const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
-    axios.get<User[]>("https://example.com/uses").then((res) => {
+    axios.get<User[]>("https://example.com/users").then((res) => {
       setUsers(res.data);
     });
   }, []);
