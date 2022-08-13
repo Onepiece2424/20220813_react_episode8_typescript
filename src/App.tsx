@@ -6,7 +6,7 @@ type User = {
   id: number;
   name: string;
   age: number;
-  personalClor: string;
+  personalColor: string;
 };
 
 export const App = () => {
@@ -21,7 +21,12 @@ export const App = () => {
   return (
     <div>
       {users.map((user) => (
-        <ListItem id={user.id} name={user.name} age={user.age} />
+        <ListItem
+          id={user.id}
+          name={user.name}
+          age={user.age}
+          personalColor={user.personalColor}
+        />
       ))}
     </div>
   );
