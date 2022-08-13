@@ -5,7 +5,7 @@ export const ListItem: FC<User> = (props) => {
   const { id, name, age, personalColor, hobbies } = props;
   return (
     <p style={{ color: personalColor }}>
-      {id}:{name}({age}) {hobbies.join("/")}
+      {id}:{name}({age}) {hobbies?.join("/")}
     </p>
   );
 };
