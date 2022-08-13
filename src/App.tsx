@@ -2,11 +2,18 @@ import { useEffect, useState } from "react";
 import { ListItem } from "./components/ListItem";
 import axios from "axios";
 
+type User = {
+  id: number;
+  name: string;
+  age: number;
+  personalClor: string;
+};
+
 export const App = () => {
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
-    axios.get("http://example.com/uses").then((res) => {
+    axios.get<User[]>("https://example.com/uses").then((res) => {
       setUsers(res.data);
     });
   }, []);
@@ -14,7 +21,7 @@ export const App = () => {
   return (
     <div>
       {users.map((user) => (
-        <ListItem id={user.id} name={user.nama} age={(user, age)} />
+        <ListItem id={user.id} name={user.name} age={user.age} />
       ))}
     </div>
   );
